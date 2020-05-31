@@ -27,7 +27,7 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
         
         webView = WKWebView(frame: .zero, configuration: webConfiguration)
         view = webView
-        webView.reload
+        webView.reload()
         
         webView.uiDelegate = self
         webView.navigationDelegate = self
