@@ -82,8 +82,11 @@ class ViewController: UIViewController {
                         self.queryService.makeAuthorizationRequest(credentials: credentials, completion: { [weak self] userInfo, errorMessage in
                             
                             if let userInfo = userInfo {
-                                self?.user = userInfo
-                                self?.startToSearchViewSegue()
+                                DispatchQueue.main.async {
+                                    self?.user = userInfo
+                                    self?.startToSearchViewSegue()
+                                }
+                                
                             } else {
                                 print("no userinfo")
                             }

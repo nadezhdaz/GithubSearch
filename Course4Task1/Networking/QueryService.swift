@@ -120,10 +120,7 @@ class QueryService {
                 response.statusCode == 200 {
                 
                 self?.parseUserData(data)
-                
-                DispatchQueue.main.async {
-                    completion(self?.user, self?.errorMessage ?? "")
-                }
+                completion(self?.user, self?.errorMessage ?? "")
             }
             else {
                 
